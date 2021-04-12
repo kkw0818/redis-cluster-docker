@@ -11,7 +11,7 @@ services:
       - CLIENTHOST=0.0.0.0
       - CLIENTPORT=7000
       volumes:
-      - "../../redis-cluster/redis1:/data"
+      - "../../redis-cluster/redis-data/redis1:/data"
       restart: always
 
    redis-slave:
@@ -25,5 +25,5 @@ services:
       - CLIENTHOST=0.0.0.0
       - CLIENTPORT=7001
       volumes:
-      - "../../redis-cluster/redis2:/data"
+      - "../../redis-cluster/redis-data/redis2:/data"
       restart: always
