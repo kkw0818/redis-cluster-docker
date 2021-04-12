@@ -1,11 +1,8 @@
 #!/bin/sh
 set -e
 
-## from redis-5
-sed -i "s/bind 127.0.0.1/bind $CLIENTHOST 127.0.0.1/g" /etc/redis/redis.conf
-#
 ### redis port inside redis.conf
-sed -i "s/port 6379/port $CLIENTPORT/g" /etc/redis/redis.conf
+sed -i "s/port 6379/port $CLIENTPORT" /etc/redis/redis.conf
 sed -i "s/# requirepass foobared/requirepass $REQUIREPASS/g" /etc/redis/redis.conf
 sed -i "s/# masterauth <master-password>/masterauth $REQUIREPASS/g" /etc/redis/redis.conf
 
