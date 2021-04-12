@@ -2,16 +2,16 @@
 set -e
 
 ## from redis-5
-sed -i "s/bind 127.0.0.1/bind $CLIENTHOST 127.0.0.1/g" /usr/local/bin/redis.conf
+sed -i "s/bind 127.0.0.1/bind $CLIENTHOST 127.0.0.1/g" /etc/redis/redis.conf
 #
 ### redis port inside redis.conf
-sed -i "s/port 6379/port $CLIENTPORT/g" /usr/local/bin/redis.conf
-sed -i "s/# requirepass foobared/requirepass $REQUIREPASS/g" /usr/local/bin/redis.conf
-sed -i "s/# masterauth <master-password>/masterauth $REQUIREPASS/g" /usr/local/bin/redis.conf
+sed -i "s/port 6379/port $CLIENTPORT/g" /etc/redis/redis.conf
+sed -i "s/# requirepass foobared/requirepass $REQUIREPASS/g" /etc/redis/redis.conf
+sed -i "s/# masterauth <master-password>/masterauth $REQUIREPASS/g" /etc/redis/redis.conf
 
 ### slaveof <masterip> <masterport> => slaveof $MASTERHOST $MASTERPORT
 if [ "$MASTERPORT" != "" ];then
-	sed -i "s/# slaveof <masterip> <masterport>/slaveof $MASTERHOST $MASTERPORT/g" /usr/local/bin/redis.conf
+	sed -i "s/# slaveof <masterip> <masterport>/slaveof $MASTERHOST $MASTERPORT/g" /etc/redis/redis.conf
 fi
 
 # first arg is `-f` or `--some-option`
