@@ -2,12 +2,12 @@
 set -e
 
 ### redis port inside redis.conf
-sed -i "s/# requirepass foobared/requirepass $REQUIREPASS/g" /etc/redis/redis.conf
-sed -i "s/# masterauth <master-password>/masterauth $REQUIREPASS/g" /etc/redis/redis.conf
-sed -i "s/port 6379/port $CLIENTPORT/g" /etc/redis/redis.conf
-sed -i "s/# cluster-enabled yes/cluster-enabled yes/g" /etc/redis/redis.conf
-sed -i "s/# cluster-config-file nodes-6379.conf/cluster-config-file nodes.conf/g" /etc/redis/redis.conf
-sed -i "s/# cluster-node-timeout 15000/cluster-node-timeout 5000/g" /etc/redis/redis.conf
+#sed -i "s/# requirepass foobared/requirepass $REQUIREPASS/g" /usr/local/bin/redis.conf
+#sed -i "s/# masterauth <master-password>/masterauth $REQUIREPASS/g" /usr/local/bin/redis.conf
+sed -i "s/port 6379/port $CLIENTPORT/g" /usr/local/bin/redis.conf
+sed -i "s/# cluster-enabled yes/cluster-enabled yes/g" /usr/local/bin/redis.conf
+sed -i "s/# cluster-config-file nodes-6379.conf/cluster-config-file nodes.conf/g" /usr/local/bin/redis.conf
+sed -i "s/# cluster-node-timeout 15000/cluster-node-timeout 5000/g" /usr/local/bin/redis.conf
 
 # first arg is `-f` or `--some-option`
 # or first arg is `something.conf`
