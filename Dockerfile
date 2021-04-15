@@ -1,4 +1,4 @@
-FROM redis:5.0-alpine
+FROM redis:6.2.1-alpine
 
 MAINTAINER kkw0818 (kkw0818@gmail.com)
 
