@@ -8,4 +8,4 @@ docker-compose -f conf/docker-compose.yml up --build -d
 centos7 버젼 기준 설정
 
 # Redis
-5.0-alpine
+6.2.1-alpine
